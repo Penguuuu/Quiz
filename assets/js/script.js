@@ -47,6 +47,8 @@ var startButton = document.getElementById("start-button");
 var questionText = questions[currentQuestion].question;
 var choices = questions[currentQuestion].choices;
 
+var savedScore = localStorage.getItem("quizScore");
+
 
 var initialsInput = document.getElementById("initials-input");
 var scoreDisplay = document.getElementById("score-display");
@@ -76,6 +78,8 @@ function displayQuestion() {
     choices[i].onclick = handleAnswerClick;
   }
 }
+
+//fucntion to handle selected answers -> if answer is inccorect, a message will display and reduce time by 10 seconds. 
 function handleAnswerClick(event) {
   var selectedAnswerIndex = event.target.value;
   var question = questions[currentQuestion];
@@ -111,11 +115,16 @@ function startTimer() {
   }, 1000);
 }
 
+
 function endQuiz() {
   clearInterval(timerInterval);
   document.getElementById("quiz").style.display = "none";
   document.getElementById("score").textContent = score;
   document.getElementById("score-form").style.display = "block";
+}
+
+if (savedScore) {
+  document.getElementById("saved-score").textContent = savedScore;
 }
 
 
