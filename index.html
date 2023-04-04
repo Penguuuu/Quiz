@@ -1,32 +1,38 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Code Quiz</title>
+  <meta charset="UTF-8">
+  <title>Code Quiz</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
 <body>
-            <button class="btn" id="start">Start Quiz</button>
-            <button class="btn" id="answer1"></button>
-            <button class="btn" id="answer2"></button>
-            <button class="btn" id="answer3"></button>
-            <button class="btn" id="answer4"></button>
-            <button class="btn" id="submitScore"></button>
 
-
-    </section>
-
-    <script src="./Assets/js/script.js"></script>
+  <h1>Quiz Game!</h1>
+  <h2 id="my-text">You will have 60 seconds to answer the questions. For every wrong answer, 10 seconds will be deducted from your time.</h2>
+  <button id="start-button" onclick="hideText()">Start Game</button>
+  <div id="quiz" style="display: none;">
+    <div id="question"></div>
+    <hr>
+    <div id="choices">
+      <ul>
+      <li><button id="answer" value="1"></button></li>
+      <li><button id="answer" value="2"></button></li>
+      <li><button id="answer" value="3"></button></li>
+      <li><button id="answer" value="4"></button></li>
+    </ul>
+    </div>
+    <hr>
+    <div id="timer"></div>
+    <div id="score"></div>
+    <div id="message"></div>
+  </div>
+  <div id="score-form" style="display: none;">
+    <form>
+      <label for="initials">Enter initials:</label>
+      <input type="text" id="initials">
+      <button id="submit-score">Submit</button>
+    </form>
+  </div>
+  <script src="./assets/js/script.js"></script>
 </body>
-
-<footer>
-    <button class="quizbtn" id="quiz-score">Scores</button>
-</div>
-<div>
-    <p class="timer">Time:<span id="timeLeft"></span></p>
-</div>
-</footer>
-
 </html>
