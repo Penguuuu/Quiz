@@ -13,5 +13,5 @@
 ## Credit
 
 ## image of quiz
-<img src="./assets/images/screenshot.png" width="500" height="500">
+<img src="./assets/image/screenshot.png" width="500" height="500">
 ## Live site
