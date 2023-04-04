@@ -76,6 +76,8 @@ function displayQuestion() {
   for (var i = 0; i < question.choices.length; i++) {
     choices[i].textContent = question.choices[i];
     choices[i].onclick = handleAnswerClick;
+    
+    document.getElementById("score").textContent = score;
   }
 }
 
@@ -83,7 +85,7 @@ function displayQuestion() {
 function handleAnswerClick(event) {
   var selectedAnswerIndex = event.target.value;
   var question = questions[currentQuestion];
-  if (selectedAnswerIndex === question.answer) {
+  if (selectedAnswerIndex == question.answer) {
     score++;
     document.getElementById("score").textContent = score;
   } else {
